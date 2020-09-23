@@ -29,7 +29,7 @@ function ProductItem({
           </ReviewCount>
         </RatingContainer>
         <FlexRow>
-          <OldPrice>{`${Math.ceil(price * (Math.random() > 0.5 ? 1.10 : 1.25))} $`}</OldPrice>
+          <OldPrice>{`${Math.ceil(price * 1.10)} $`}</OldPrice>
           <Price>{`${price} $`}</Price>
         </FlexRow>
       </ContainerInner>

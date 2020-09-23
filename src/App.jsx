@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  Container, Row, Col, Alert,
+  Container, Row, Col,, Badge
 } from 'reactstrap';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -126,11 +126,11 @@ function App() {
               />
             </Col>
           </Row>
-          <Alert>
+          <Badge>
             Found Products Count:
             {' '}
             {productCount}
-          </Alert>
+          </Badge>
           <InfiniteScroll
             loadMore={handleInfiniteScroll}
             hasMore={hasMore}
