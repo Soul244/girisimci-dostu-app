@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import GlobalStyle from './globalStyle';
+
+axios.defaults.baseURL = 'https://girisimci-dostu-api.herokuapp.com/api/v1';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <>
+      <GlobalStyle />
+      <App />
+    </>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
