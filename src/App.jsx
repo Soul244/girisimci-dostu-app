@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  Container, Row, Col,, Badge
+  Container, Row, Col, Badge,
 } from 'reactstrap';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
