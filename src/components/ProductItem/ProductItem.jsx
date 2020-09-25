@@ -9,9 +9,19 @@ import {
 function ProductItem({
   name, image, price, reviewCount, reviewAvarage, sales, ...rest
 }) {
+  const imageString = image.split('/');
+  imageString[3] = '32';
+  imageString[4] = '24';
+  const thumbImage = imageString.reduce((acc, text, index) => {
+    if (index === 0) {
+      return text;
+    }
+    return `${acc}/${text}`;
+  }, '');
+
   return (
     <Container {...rest}>
-      <Image src={image} alt={name} />
+      <Image src={image} thumbImage={thumbImage} alt={name} />
       <ContainerInner>
         <Name>{name}</Name>
         <Sales>{`Sales: ${sales}`}</Sales>

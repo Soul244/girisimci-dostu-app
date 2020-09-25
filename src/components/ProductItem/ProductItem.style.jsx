@@ -1,5 +1,6 @@
 import { lighten } from 'polished';
 import styled from 'styled-components';
+import LazyImage from '../LazyImage';
 
 export const Container = styled.div`
   width: 100%;
@@ -17,7 +18,7 @@ export const ContainerInner = styled.div`
   padding: 0.5rem;
 `;
 
-export const Image = styled.img`
+export const Image = styled(LazyImage)`
   width: 100%;
   height: auto;
   object-fit: contain;

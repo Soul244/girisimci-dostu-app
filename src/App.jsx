@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  Container, Row, Col, Badge,
+  Container, Row, Col, Badge
 } from 'reactstrap';
 import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -10,6 +10,7 @@ import ProductItem from './components/ProductItem';
 import Sidebar from './containers/Sidebar';
 import ProductModal from './components/ProductModal';
 import SpinnerCustom from './components/SpinnerCustom';
+import Basket from './containers/Basket';
 
 const defaultHeaderFilters = {
   sales: null,
@@ -52,9 +53,10 @@ function App() {
   const [sidebarFilters, setSidebarFilters] = useState(defaultSidebarFilters);
   const [clickedProductId, setClickedProductId] = useState(null);
   const [modal, setModal] = useState(false);
+
   const scroll = useRef();
 
-  const toggle = () => setModal(!modal);
+  const modalToggle = () => setModal(!modal);
 
   const handleInfiniteScroll = async (page) => {
     const params = { page, ...handleFilters({ ...headerFilters, ...sidebarFilters }) };
@@ -94,7 +96,7 @@ function App() {
 
   const handleClickedProduct = (productId) => {
     setClickedProductId(productId);
-    toggle();
+    modalToggle();
   };
 
   // clear products when headerFilters changes
@@ -126,11 +128,18 @@ function App() {
               />
             </Col>
           </Row>
-          <Badge>
-            Found Products Count:
-            {' '}
-            {productCount}
-          </Badge>
+          <Row>
+            <Col>
+              <Badge color="success">
+                Found Products Count:
+                {' '}
+                {productCount}
+              </Badge>
+            </Col>
+            <Col className="text-right">
+              <Basket />
+            </Col>
+          </Row>
           <InfiniteScroll
             loadMore={handleInfiniteScroll}
             hasMore={hasMore}
@@ -147,7 +156,7 @@ function App() {
           </InfiniteScroll>
         </Col>
       </Row>
-      <ProductModal isOpen={modal} toggle={toggle} productId={clickedProductId} />
+      <ProductModal isOpen={modal} toggle={modalToggle} productId={clickedProductId} />
     </Container>
   );
 }
