@@ -67,7 +67,7 @@ function Sidebar({
               <Input type="number" name="minPrice" placeholder="Min" min="0" max={sidebarFilters.maxPrice} onChange={onChangeInputs} value={sidebarFilters.minPrice} />
             </Col>
             <Col>
-              <Input type="number" name="maxPrice" placeholder="Max" min={sidebarFilters.minPrice} onChange={onChangeInputs} value={sidebarFilters.maxPrice} />
+              <Input type="number" name="maxPrice" placeholder="Max" min={sidebarFilters.minPrice || '0'} onChange={onChangeInputs} value={sidebarFilters.maxPrice} />
             </Col>
           </Row>
         </CardBody>
