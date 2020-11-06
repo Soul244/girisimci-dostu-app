@@ -5,12 +5,11 @@ import { Image, ThumbImage } from './LazyImage.style';
 
 const LazyImage = ({ thumbImage, src, ...rest }) => {
   const [isLoaded, setIsLoaded] = React.useState(false);
-  console.log({ thumbImage });
 
   return (
     <div style={{ position: 'relative' }}>
       <ThumbImage
-        src={thumbImage}
+        src="/thumb.png"
         alt={rest.alt}
         style={{ visibility: isLoaded ? 'hidden' : 'visible' }}
         {...rest}

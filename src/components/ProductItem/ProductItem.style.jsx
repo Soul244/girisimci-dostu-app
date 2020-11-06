@@ -5,7 +5,7 @@ import LazyImage from '../LazyImage';
 export const Container = styled.div`
   width: 100%;
   margin-bottom: 1rem;
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
   border: 1px solid ${lighten(0.45, 'gray')};
   cursor: pointer;
   transition: box-shadow 0.3s linear;
@@ -23,7 +23,6 @@ export const Image = styled(LazyImage)`
   height: auto;
   object-fit: contain;
   border-radius: 8px 8px 0 0;
-  margin-bottom: 1rem;
 `;
 
 export const FlexRow = styled.div`

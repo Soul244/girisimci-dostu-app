@@ -10,7 +10,6 @@ export const ThumbImage = styled.img`
   left: 0;
   width: 100%;
   height: 100%;
-  filter: blur(7px);
-  transform: scale(1.1);
+  object-fit: contain;
   transition: visibility 0ms ease 400ms;
 `;
