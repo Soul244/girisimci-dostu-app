@@ -10,7 +10,6 @@ import ProductItem from './components/ProductItem';
 import Sidebar from './containers/Sidebar';
 import ProductModal from './components/ProductModal';
 import SpinnerCustom from './components/SpinnerCustom';
-import Basket from './containers/Basket';
 
 const defaultHeaderFilters = {
   sales: null,
@@ -130,15 +129,13 @@ function App() {
           </Row>
           <Row>
             <Col>
-              <Badge color="success">
+              <Badge color="success" style={{ borderRadius: '16px', padding: '0.375rem 0.875rem', marginBottom: '1rem' }}>
                 Found Products Count:
                 {' '}
                 {productCount}
               </Badge>
             </Col>
-            <Col className="text-right">
-              <Basket />
-            </Col>
+            <Col className="text-right" />
           </Row>
           <InfiniteScroll
             loadMore={handleInfiniteScroll}

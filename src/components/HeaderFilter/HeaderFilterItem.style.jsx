@@ -4,7 +4,7 @@ import { lighten } from 'polished';
 export const Container = styled.a`
   width: 100%;
   padding: 8px 0;
-  background-color: ${(props) => (props.isActive ? lighten(0.25, 'gray') : lighten(0.35, 'gray'))};
+  background-color: ${(props) => (props.isActive ? lighten(0.25, 'gray') : lighten(0.40, 'gray'))};
   color: ${(props) => (props.isActive ? 'white' : 'black')};
   transition: color 0.15s linear, background-color 0.15s linear;
   text-align: center;

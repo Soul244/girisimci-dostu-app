@@ -5,12 +5,12 @@ import {
 } from 'reactstrap';
 import { Container } from './Basket.style';
 
-function Basket(props) {
+function Basket() {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const popoverToggle = () => setPopoverOpen(!popoverOpen);
   return (
     <Container>
-      <Button id="basket" type="button" color="success">
+      <Button id="basket" type="button" color="success" outline>
         🛒
       </Button>
       <Popover placement="bottom" isOpen={popoverOpen} target="basket" toggle={popoverToggle}>
@@ -20,9 +20,5 @@ function Basket(props) {
     </Container>
   );
 }
-
-Basket.propTypes = {
-
-};
 
 export default Basket;
