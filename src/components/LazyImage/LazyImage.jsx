@@ -9,7 +9,7 @@ const LazyImage = ({ src, ...rest }) => {
   return (
     <div style={{ position: 'relative' }}>
       <ThumbImage
-        src="/thumb.png"
+        src="/thumb.webp"
         style={{ visibility: isLoaded ? 'hidden' : 'visible' }}
         {...rest}
       />
