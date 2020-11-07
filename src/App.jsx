@@ -108,8 +108,8 @@ function App() {
   }, [headerFilters]);
 
   return (
-    <Container fluid="lg">
-      <Row>
+    <Container fluid="md">
+      <Row noGutters>
         <Col lg="3">
           <Sidebar
             onSidebarSubmit={onSidebarSubmit}
@@ -119,7 +119,7 @@ function App() {
           />
         </Col>
         <Col lg="9">
-          <Row>
+          <Row noGutters>
             <Col>
               <HeaderFilterContainer
                 handleHeaderFilter={handleHeaderFilter}
@@ -127,7 +127,7 @@ function App() {
               />
             </Col>
           </Row>
-          <Row>
+          <Row noGutters>
             <Col>
               <Badge color="success" style={{ borderRadius: '16px', padding: '0.375rem 0.875rem', marginBottom: '1rem' }}>
                 Found Products Count:
@@ -143,9 +143,9 @@ function App() {
             loader={<SpinnerCustom type="grow" color="primary" key={0} />}
             ref={scroll}
           >
-            <Row>
+            <Row noGutters>
               {products.map((product) => (
-                <Col xs="6" sm="4" key={product._id}>
+                <Col xs="12" sm="6" md="4" key={product._id}>
                   <ProductItem onClick={() => handleClickedProduct(product._id)} {...product} />
                 </Col>
               ))}
