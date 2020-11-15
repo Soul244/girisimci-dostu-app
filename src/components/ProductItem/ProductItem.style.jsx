@@ -21,7 +21,7 @@ export const Container = styled.div`
 export const ImageContainer = styled.div`
   padding:0.5rem 0.5rem 0 0.5rem;
   @media(max-width:576px){
-    max-width: ${({ isBiggerWhenMobile }) => (isBiggerWhenMobile ? null : '200px')};
+    max-width: ${({ isBiggerWhenMobile }) => (isBiggerWhenMobile ? null : '150px')};
   }
 `;
 

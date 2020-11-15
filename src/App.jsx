@@ -111,7 +111,7 @@ function App() {
   }, [headerFilters]);
 
   return (
-    <Container fluid="lg">
+    <Container fluid="md">
       <Row noGutters>
         <Col lg="3">
           <Sidebar
@@ -122,31 +122,22 @@ function App() {
           />
         </Col>
         <Col lg="9">
-          <Row noGutters>
-            <Col>
-              <HeaderFilterContainer
-                handleHeaderFilter={handleHeaderFilter}
-                headerFilters={headerFilters}
-              />
-            </Col>
-          </Row>
-          <Row noGutters>
-            <Col>
-              <Badge
-                color="success"
-                style={{
-                  borderRadius: '16px',
-                  padding: '0.375rem 0.875rem',
-                  marginBottom: '1rem',
-                }}
-              >
-                Found Products Count:
-                {' '}
-                {productCount}
-              </Badge>
-            </Col>
-            <Col className="text-right" />
-          </Row>
+          <HeaderFilterContainer
+            handleHeaderFilter={handleHeaderFilter}
+            headerFilters={headerFilters}
+          />
+          <Badge
+            color="success"
+            style={{
+              borderRadius: '16px',
+              padding: '0.375rem 0.875rem',
+              marginBottom: '1rem',
+            }}
+          >
+            Found Products Count:
+            {' '}
+            {productCount}
+          </Badge>
           <InfiniteScroll
             loadMore={handleInfiniteScroll}
             hasMore={hasMore}

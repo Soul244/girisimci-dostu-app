@@ -16,4 +16,8 @@ export default createGlobalStyle`
     padding-right: 5px;
     padding-left: 5px;
 }
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+    padding-left: 5px;
+    padding-right: 5px;
+}
 `;
