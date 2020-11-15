@@ -12,10 +12,17 @@ export const Container = styled.div`
   :hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   }
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: ${({ isBiggerWhenMobile }) => (isBiggerWhenMobile ? 'column' : 'row')};
+  }
 `;
 
 export const ImageContainer = styled.div`
-  padding: 0.5rem 0.5rem 0 0.5rem;
+  padding:0.5rem 0.5rem 0 0.5rem;
+  @media(max-width:576px){
+    max-width: ${({ isBiggerWhenMobile }) => (isBiggerWhenMobile ? null : '200px')};
+  }
 `;
 
 export const Image = styled(LazyImage)`

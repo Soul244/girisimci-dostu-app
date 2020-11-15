@@ -58,7 +58,10 @@ function App() {
   const modalToggle = () => setModal(!modal);
 
   const handleInfiniteScroll = async (page) => {
-    const params = { page, ...handleFilters({ ...headerFilters, ...sidebarFilters }) };
+    const params = {
+      page,
+      ...handleFilters({ ...headerFilters, ...sidebarFilters }),
+    };
     const config = {
       method: 'get',
       url: 'products',
@@ -129,7 +132,14 @@ function App() {
           </Row>
           <Row noGutters>
             <Col>
-              <Badge color="success" style={{ borderRadius: '16px', padding: '0.375rem 0.875rem', marginBottom: '1rem' }}>
+              <Badge
+                color="success"
+                style={{
+                  borderRadius: '16px',
+                  padding: '0.375rem 0.875rem',
+                  marginBottom: '1rem',
+                }}
+              >
                 Found Products Count:
                 {' '}
                 {productCount}
@@ -144,16 +154,24 @@ function App() {
             ref={scroll}
           >
             <Row noGutters>
-              {products.map((product) => (
-                <Col xs="6" sm="4" key={product._id}>
-                  <ProductItem onClick={() => handleClickedProduct(product._id)} {...product} />
+              {products.map((product, index) => (
+                <Col xs="12" sm="4" key={product._id}>
+                  <ProductItem
+                    isBiggerWhenMobile={index % 5 === 0}
+                    onClick={() => handleClickedProduct(product._id)}
+                    {...product}
+                  />
                 </Col>
               ))}
             </Row>
           </InfiniteScroll>
         </Col>
       </Row>
-      <ProductModal isOpen={modal} toggle={modalToggle} productId={clickedProductId} />
+      <ProductModal
+        isOpen={modal}
+        toggle={modalToggle}
+        productId={clickedProductId}
+      />
     </Container>
   );
 }

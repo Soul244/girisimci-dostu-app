@@ -7,11 +7,11 @@ import {
 } from './ProductItem.style';
 
 function ProductItem({
-  name, image, price, reviewCount, reviewAvarage, sales, ...rest
+  name, image, price, reviewCount, reviewAvarage, sales, isBiggerWhenMobile, ...rest
 }) {
   return (
-    <Container {...rest}>
-      <ImageContainer>
+    <Container isBiggerWhenMobile={isBiggerWhenMobile} {...rest}>
+      <ImageContainer isBiggerWhenMobile={isBiggerWhenMobile}>
         <Image src={image} alt={name} />
       </ImageContainer>
       <ContainerInner>
@@ -46,7 +46,8 @@ ProductItem.propTypes = {
   price: PropTypes.number.isRequired,
   reviewCount: PropTypes.number.isRequired,
   reviewAvarage: PropTypes.number.isRequired,
-  sales: PropTypes.number.isRequired
+  sales: PropTypes.number.isRequired,
+  isBiggerWhenMobile: PropTypes.bool.isRequired
 };
 
 export default ProductItem;
